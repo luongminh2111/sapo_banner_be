@@ -18,9 +18,9 @@ spring:
   application:
     name: sapo-banner
   datasource:
-    url: jdbc:mysql://localhost:3307/sapo_banner
+    url: jdbc:mysql://localhost:3306/sapo_banner
     username: root
-    password: Luongminh2111
+    password: trong286
     driver-class-name: com.mysql.cj.jdbc.Driver
   servlet:
     multipart:
