@@ -115,7 +115,7 @@ public class SectionController {
     @PutMapping("/{id}")
     public ResponseEntity<SectionDTO> updateSection(@RequestBody @Valid SectionDTO sectionDTO, @PathVariable("id") Long id){
         try {
-            Section section = new Section(id, sectionDTO.getDivId(), sectionDTO.getDesc(), sectionDTO.getCode(),sectionDTO.getMode(), sectionDTO.getWidth(), sectionDTO.getHeight(), sectionDTO.getLastModifiedBy());
+            Section section = new Section(id, sectionDTO.getDivId(), sectionDTO.getDesc(), sectionDTO.getCode(),sectionDTO.getMode(), sectionDTO.getWidth(), sectionDTO.getHeight(), sectionDTO.getCreatedBy(), sectionDTO.getLastModifiedBy());
             sectionService.save(section);
             return new ResponseEntity<>(sectionDTO, HttpStatus.OK);
         }catch (Exception e){
