@@ -56,6 +56,18 @@ public class Section extends BaseEntity implements Serializable {
         this.setLastModifiedBy(lastModifiedBy);
     }
 
+    public Section(Long id, String divId, String desc, String code, Short mode, Integer width, Integer height, String createdBy, String lastModifiedBy) {
+        super(id);
+        this.divId = divId;
+        this.desc = desc;
+        this.mode = mode;
+        this.code = code;
+        this.width = width;
+        this.height = height;
+        this.setCreatedBy(createdBy);
+        this.setLastModifiedBy(lastModifiedBy);
+    }
+
     public Section(String divId, String code, String desc, Short mode, Integer width, Integer height, String createdBy) {
         this.divId = divId;
         this.desc = desc;
