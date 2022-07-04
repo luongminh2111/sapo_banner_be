@@ -21,6 +21,8 @@ public interface PageRepository extends BaseRepository<PageEntity, Long> {
     @Query(value = "select * from pages where name = ?1 and id not like ?2", nativeQuery = true)
     List<PageEntity> getByPageName(String name, long id);
 
+    PageEntity findByPageUrl(String pageUrl);
+
     List<PageEntity> getByWebsiteId(int id);
 
     @Query(value="select * from pages where url = ?1 and id not like ?2", nativeQuery = true)

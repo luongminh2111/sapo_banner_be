@@ -35,6 +35,13 @@ public class PageServiceImpl extends BaseServiceImpl<PageEntity, Long> implement
     }
 
     @Override
+    public PageDTO byPageUrl(String url){
+        var page = pageRepository.findByPageUrl(url);
+        return pageMapper.toDto(page);
+    }
+
+
+    @Override
     public List<PageDTO> findAllPage(){
         var pages = findAll();
         return pageMapper.toDto(pages);

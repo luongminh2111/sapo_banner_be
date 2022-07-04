@@ -39,6 +39,17 @@ public class PageController {
         }
     }
 
+    @GetMapping("/pageUrl/{pageUrl}")
+    public ResponseEntity<PageDTO> findByPageUrl(@PathVariable(value="pageUrl") String url){
+        try{
+            var pageDTO = pageService.byPageUrl(url);
+            return ResponseEntity.ok(pageDTO);
+        } catch (Exception e){
+            log.error(e.toString());
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @GetMapping("/all")
     public ResponseEntity<List<PageDTO>> findAllPages(){
         try {
