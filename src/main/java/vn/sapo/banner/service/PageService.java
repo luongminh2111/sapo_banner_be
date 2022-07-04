@@ -11,6 +11,8 @@ public interface PageService extends BaseService<PageEntity, Long> {
 
     PageDTO byId(long id);
 
+    PageDTO byPageUrl(String url);
+
     List<PageDTO> findAllPage();
 
     Page<PageEntity> findAllPagePagination(int pageNumber);
